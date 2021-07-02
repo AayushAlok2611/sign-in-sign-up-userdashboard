@@ -1,6 +1,6 @@
 import React, { Component ,useState} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import '../App.css';
+import '../../App.css';
 import TextField from '@material-ui/core/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import  {Axios} from '../Axios';
@@ -30,16 +30,6 @@ function UserDetailsComponent() {
 }
   return (
     <div className="UplaodForm">
-       <nav>
-            <h2>Surveillance system</h2>
-            <ul className="nvlink">
-              <Link to="/home"><li>Home</li></Link>
-              <Link to="/webcamupload"><li>Live Capture</li></Link>
-              <Link to="/facerecog"><li>Face Recognition</li></Link>
-              <Link to="/licenseplaterecog"><li>License Plate</li></Link>
-            </ul>
-
-        </nav>
         <br /><br />   
         <h1>Welcome to the Surveillance System</h1>
         <br /> <br />

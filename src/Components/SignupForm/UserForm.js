@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import FormUserDetails from './FormUserDetails';
 import FormPersonalDetails from './FormPersonalDetails';
 import Confirm from './Confirm';
-import Success from './Success';
 import Phone from './Phone';
 import PhoneInput from './phoneInput';
-import Otpverify from './otpVerify';
 import Login from '../SignInform/Login';
 
 
@@ -92,20 +90,7 @@ export class UserForm extends Component {
           handleChange={this.handleChange} 
           values={values} />
           );
-      case 5:
-        return (
-          <Otpverify 
-          nextStep={this.nextStep} 
-          prevStep={this.prevStep} 
-          handleChange={this.handleChange} 
-          values={values} />
-        );
-
-      case 6:
-        return <Success />;
-      default:
-        (console.log('This is a multi-step form built with React.'))
-    }
+      }
   }
 }
 

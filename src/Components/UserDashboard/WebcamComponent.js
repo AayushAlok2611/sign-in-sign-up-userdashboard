@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import Webcam from "react-webcam";
-import "../App.css";
+import "../../App.css";
 import {Link} from 'react-router-dom';
 
 
@@ -25,16 +25,6 @@ const WebcamComponent = () => {
 
   return (
     <div>
-      <nav>
-            <h2>Surveillance system</h2>
-            <ul className="nvlink">
-              <Link to="/home"><li>Home</li></Link>
-              <Link to="/webcamupload"><li>Live Capture</li></Link>
-              <Link to="/facerecog"><li>Face Recognition</li></Link>
-              <Link to="/licenseplaterecog"><li>License Plate</li></Link>
-            </ul>
-
-        </nav>
       <div className="col-appear">
       <h1>Live Image Capture</h1>
       {src==''?

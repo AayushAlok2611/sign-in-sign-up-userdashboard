@@ -6,27 +6,26 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {Link} from 'react-router-dom';
 
 
-function NewFace() {
+function NewLicense() {
   const [files, setFiles] = useState()
   const [video, setVideo] = useState()
-  const [name,setUsername]  = useState('')
-  const [age,setAge] = useState('')
-  const [gender,setGender] = useState('')
+  const [vid,setVID]  = useState('')
+  const [vno,setVNO] = useState('')
+  const [assignee,setAssignee] = useState('')
 
   async function uploadFile() {
     const formData = new FormData()
     console.log('upload', video)
-    console.log('name', name)
 
     for (let i = 0; i < files.length; i++) {
       formData.append(`images`, files[i])
     }
     formData.append('video', video[0])
-    formData.append('name', name)
-    formData.append('age', age)
-    formData.append('gender', gender)
+    formData.append('vid', vid)
+    formData.append('vno', vno)
+    formData.append('assignee', assignee)
     axios
-      .post('https://mysterious-dawn-87140.herokuapp.com/api/faces', formData, {
+      .post('https://mysterious-dawn-87140.herokuapp.com/api/cars', formData, {
         headers: {
           'content-type': 'multipart/form-data',
           Authorization:
@@ -49,39 +48,34 @@ function NewFace() {
   return (
     <div>
       <br /> <br />
-            <h1>Face Recognition</h1>
+            <h1>License Plate Recognition</h1>
             <br /> <br />
       <form onSubmit={handleSubmit}>
-      <MuiThemeProvider>
-      <React.Fragment>
-      <TextField
+        VID:
+      <input
           type='text'
-          id='name'
-          name= 'name'
-          label="Name"
-          defaultValue = {name}
-          onChange={(e) => setUsername(e.target.value)}
+          id='vid'
+          name= 'vid'
+          onChange={(e) => setVID(e.target.value)}
         />
         <br />
-        
-        <TextField
+        VNO:
+        <input
           type='text'
-          id='age'
-          name='age'
-          label="Age"
-          defaultValue = {age}
-          onChange={(e) => setAge(e.target.value)}
+          id='vno'
+          name='vno'
+          onChange={(e) => setVNO(e.target.value)}
         />
         <br />
-        <TextField
+        Assigne:
+        <input
           type='text'
-          id='gender'
-          name='gender'
-          label="Gender"
-          defaultValue = {gender}
-          onChange={(e) => setGender(e.target.value)}
+          id='assignee'
+          name='assignee'
+          onChange={(e) => setAssignee(e.target.value)}
         />
         <br />
+        Image:
         <input
           type='file'
           id='img'
@@ -89,12 +83,8 @@ function NewFace() {
           name='img'
           onChange={(e) => setFiles(e.target.files)}
         />
-        <div className="label1">
-					<label htmlFor="img" className="image-upload">
-						Add Image
-					</label>
-				</div>
         <br />
+        Video:
         <input
           type='file'
           id='video'
@@ -102,23 +92,14 @@ function NewFace() {
           name='video'
           onChange={(e) => setVideo(e.target.files)}
         />
-        <div className="label1">
-          <label className="image-upload" htmlFor="video">
-            Add Video
-          </label>
-        </div>
         <br />
-        <button type='submit' id="sub" className='btn btn-info'></button>
-        <div className="label1">
-          <label className="image-upload" htmlFor="sub">
-            upload
-          </label>
-        </div>
-        </React.Fragment>
-        </MuiThemeProvider>
+        <button type='submit' className='btn btn-info'>
+          {' '}
+          Upload File{' '}
+        </button>
       </form>
     </div>
   )
 }
 
-export default NewFace
+export default NewLicense

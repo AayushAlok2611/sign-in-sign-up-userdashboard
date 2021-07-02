@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import {Link,useHistory} from 'react-router-dom';
 
 
 import {
@@ -20,14 +20,23 @@ const responseGoogle = (response) => {
 };
 
 const Login = () => {
+  let history = useHistory();
+
   const paperStyle = {
     padding: 20,
     height: "80vh",
     width: 280,
     margin: "20px auto",
   };
+
   const avatarStyle = { backgroundColor: "#2979ff" };
+  
   const btnstyle = { margin: "8px 0" };
+  
+  const loginHandler = () => {
+    history.push('/home');
+  }
+
   return (
     <Grid>
       <Paper elevation={10} style={paperStyle}>
@@ -61,6 +70,7 @@ const Login = () => {
           variant="contained"
           style={btnstyle}
           fullWidth
+          onClick={loginHandler}
         >
           Sign in
         </Button>
