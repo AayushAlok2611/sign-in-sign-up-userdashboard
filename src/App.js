@@ -1,18 +1,18 @@
 import React from 'react';
 import './App.css';
-import UserDetailsComponent from './Components/UserDetailsComponent';
-import ImageComponent from './Components/ImageComponent';
-import Navigator from './Components/NavigationBar';
+import UserDetailsComponent from './Components/UserDashboard/UserDetailsComponent';
+import ImageComponent from './Components/UserDashboard/ImageComponent';
+import Navigator from './Components/UserDashboard/NavigationBar';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import WebcamComponent from './Components/WebcamComponent';
-import VideoComponent from './Components/VideoComponent';
-import FaceCombinedComponent from './Components/FaceCombinedComponent';
-import MultipleImageComponent from './Components/MultipleImageComponent';
-import LicenseCombinedComponent from './Components/LicenseCombinedComponent';
-import NewFace from './Components/NewFaceRecognition';
+import VideoComponent from './Components/UserDashboard/VideoComponent';
+import FaceCombinedComponent from './Components/UserDashboard/FaceCombinedComponent';
+import MultipleImageComponent from './Components/UserDashboard/MultipleImageComponent';
+import LicenseCombinedComponent from './Components/UserDashboard/LicenseCombinedComponent';
+import NewFace from './Components/UserDashboard/NewFaceRecognition';
 import NewLicense from './Components/NewLicense';
-import UserForm  from './Components/UserForm';
-import Login  from './Components/Login';
+import UserForm  from './Components/SignupForm/UserForm';
+import Login  from './Components/SignInform/Login';
 
 
 function App() {
